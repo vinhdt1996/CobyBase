@@ -39,9 +39,10 @@ abstract class BaseFragment<Binding : ViewDataBinding> : Fragment() {
         initToolbar()
         initViews()
         initObservers()
+        initEventListeners()
     }
 
-    fun initToolbar(toolbarLayoutId: Int = this.toolbarLayoutId) {
+    private fun initToolbar(toolbarLayoutId: Int = this.toolbarLayoutId) {
         if (toolbarLayoutId == DEFAULT_TOOLBAR_ID) return
         (activity as? BaseActivity<*>)?.addToolbar(
             toolbarLayoutId = toolbarLayoutId,
@@ -57,6 +58,8 @@ abstract class BaseFragment<Binding : ViewDataBinding> : Fragment() {
     open fun initViews() {}
 
     open fun initObservers() {}
+
+    open fun initEventListeners() {}
 
     open fun onClick(v: View?) {}
 }
