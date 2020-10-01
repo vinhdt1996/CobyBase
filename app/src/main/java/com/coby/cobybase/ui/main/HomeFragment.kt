@@ -17,6 +17,7 @@ import com.coby.cobybase.ext.gone
 import com.coby.cobybase.listener.BottomSheetListener
 import com.coby.cobybase.listener.PopUpListener
 import com.coby.cobybase.utils.AppEvent
+import com.coby.cobybase.utils.PopupUtil
 import com.coby.cobybase.vo.PopUp
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -35,49 +36,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun initEventListeners() {
         binding.btnPopup.setOnClickListener {
-            AppEvent.notifyShowPopUp(
-                PopUp(
-                    popupId = R.layout.layout_popup,
-                    isCancelable = true,
-                    callback = { binding: ViewDataBinding?, _, _ ->
-                        (binding as? LayoutPopupBinding)?.apply {
-                            title = "Error"
-                            message = "Message"
-                            center = "Close"
-                            clickListener = PopUpListener(
-                                clickCenterListener = { AppEvent.notifyClosePopUp() }
-                            )
-                        }
-                    }
-                )
-            )
+            PopupUtil.showPopupDemo()
         }
 
         binding.btnBottomSheet.setOnClickListener {
-            AppEvent.notifyShowPopUp(
-                PopUp(
-                    popupId = R.layout.layout_bottom_sheet,
-                    isBottomSheet = true,
-                    isCancelable = true,
-                    callback = { binding: ViewDataBinding?, _, _ ->
-                        (binding as? LayoutBottomSheetBinding)?.apply {
-                            title = "Title"
-                            action1 = "Action 1"
-                            action2 = "Action 2"
-                            action3 = "Action 3"
-                            action4 = "Action 4"
-                            hasArrow = true
-                            clickListener = BottomSheetListener(
-                                clickAction1Listener = { },
-                                clickAction2Listener = { },
-                                clickAction3Listener = { },
-                                clickAction4Listener = { },
-                                clickDismissListener = { AppEvent.notifyClosePopUp() }
-                            )
-                        }
-                    }
-                )
-            )
+            PopupUtil.showBottomSheetDemo()
         }
     }
 }

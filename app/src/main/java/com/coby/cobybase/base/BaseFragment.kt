@@ -9,13 +9,11 @@ import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import com.coby.cobybase.constant.AppConst.DEFAULT_TOOLBAR_ID
 import com.coby.cobybase.ext.addToolbar
+import com.coby.cobybase.ext.removeToolbar
 
 abstract class BaseFragment<Binding : ViewDataBinding> : Fragment() {
-
-    companion object {
-        const val DEFAULT_TOOLBAR_ID = -1
-    }
 
     lateinit var binding: Binding
 
@@ -51,6 +49,12 @@ abstract class BaseFragment<Binding : ViewDataBinding> : Fragment() {
                 toolbarFunc(curActivity, toolbar)
             }
         )
+    }
+
+    fun removeToolbar(){
+        (activity as? BaseActivity<*>)?.apply {
+            removeToolbar(this.binding.root as ViewGroup)
+        }
     }
 
     open fun toolbarFunc(curActivity: AppCompatActivity?, toolbar: Toolbar?) {}

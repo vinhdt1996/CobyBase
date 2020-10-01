@@ -14,8 +14,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentManager
 import com.coby.cobybase.R
+import com.coby.cobybase.constant.AppConst.ARGUMENT_KEY_POPUP
 import com.coby.cobybase.vo.PopUp
-import com.coby.cobybase.widget.PopupDialog.Companion.POPUP_MODEL
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 open class BottomPopupDialog : BottomSheetDialogFragment() {
@@ -27,7 +27,7 @@ open class BottomPopupDialog : BottomSheetDialogFragment() {
         fun newInstance(popup: PopUp?): BottomPopupDialog =
             BottomPopupDialog().apply {
                 arguments = Bundle().apply {
-                    putParcelable(POPUP_MODEL, popup)
+                    putParcelable(ARGUMENT_KEY_POPUP, popup)
                 }
             }
     }
@@ -42,7 +42,7 @@ open class BottomPopupDialog : BottomSheetDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        popup = arguments?.getParcelable(POPUP_MODEL)
+        popup = arguments?.getParcelable(ARGUMENT_KEY_POPUP)
 
         binding = DataBindingUtil.inflate(
             inflater,

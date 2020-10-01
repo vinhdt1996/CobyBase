@@ -14,6 +14,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import com.coby.cobybase.R
+import com.coby.cobybase.constant.AppConst.ARGUMENT_KEY_POPUP
 import com.coby.cobybase.vo.PopUp
 
 class PopupDialog : DialogFragment() {
@@ -22,11 +23,9 @@ class PopupDialog : DialogFragment() {
     private var binding: ViewDataBinding? = null
 
     companion object {
-        const val POPUP_MODEL = "popup_model"
-
         fun newInstance(popup: PopUp?): PopupDialog =
             PopupDialog().apply {
-                arguments = bundleOf(POPUP_MODEL to popup)
+                arguments = bundleOf(ARGUMENT_KEY_POPUP to popup)
             }
     }
 
@@ -35,7 +34,7 @@ class PopupDialog : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        popup = arguments?.getParcelable(POPUP_MODEL) ?: PopUp()
+        popup = arguments?.getParcelable(ARGUMENT_KEY_POPUP) ?: PopUp()
         if (popup.popupId == 0)
             return layoutInflater.inflate(R.layout.layout_loading, container, false)
 

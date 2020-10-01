@@ -27,6 +27,7 @@ abstract class BaseActivity<Binding: ViewDataBinding>: AppCompatActivity(), Popu
         binding.lifecycleOwner = this
 
         initViews()
+        initEventListeners()
         initObservers()
     }
 
@@ -51,6 +52,8 @@ abstract class BaseActivity<Binding: ViewDataBinding>: AppCompatActivity(), Popu
     }
 
     open fun initViews(){}
+
+    open fun initEventListeners(){}
 
     open fun initObservers(){}
 
