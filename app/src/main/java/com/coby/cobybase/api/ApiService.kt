@@ -1,5 +1,7 @@
 package com.coby.cobybase.api
 
+import com.coby.cobybase.constant.AppConst.ITEM_PER_PAGE
+import com.coby.cobybase.model.Feed
 import com.coby.cobybase.model.ListResponse
 import com.coby.cobybase.model.ObjectResponse
 import com.coby.cobybase.model.User
@@ -18,6 +20,12 @@ interface ApiService {
     @GET("search-user")
     suspend fun getUsers(
         @Query("page") page: Int = 1,
-        @Query("current_per_page") perPage: Int = 20
+        @Query("current_per_page") perPage: Int = ITEM_PER_PAGE
     ): Response<ListResponse<User>>
+
+    @GET("feed")
+    suspend fun getFeeds(
+        @Query("page") page: Int = 1,
+        @Query("current_per_page") perPage: Int = ITEM_PER_PAGE
+    ): Response<ListResponse<Feed>>
 }

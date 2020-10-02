@@ -1,8 +1,12 @@
 package com.coby.cobybase.constant
 
 object AppConst {
-    const val BASE_URL = "http://string-api.vinova.sg/api/"
+
     const val DEFAULT_TOOLBAR_ID = -1
+    const val ITEM_PER_PAGE = 20
+    const val FIRST_PAGE = 1
+
+    const val BASE_URL = "http://string-api.vinova.sg/api/"
     const val PREFS_FILENAME = "com.coby.cobybase"
     const val PREF_USER = "PREF_USER"
     const val ARGUMENT_KEY_POPUP = "ARGUMENT_KEY_POPUP"
