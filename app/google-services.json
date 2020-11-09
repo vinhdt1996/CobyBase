@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "717504045371",
+    "firebase_url": "https://cobybase.firebaseio.com",
+    "project_id": "cobybase",
+    "storage_bucket": "cobybase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717504045371:android:d26d6b63e48edca7c2971e",
+        "android_client_info": {
+          "package_name": "com.coby.cobybase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717504045371-o7tv7njrvfh8cuvm34irqtlv4o134fnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwowBha6uCXW4JTYjUftmhKjySgCYZ6mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717504045371-o7tv7njrvfh8cuvm34irqtlv4o134fnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
