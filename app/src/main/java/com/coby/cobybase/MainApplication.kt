@@ -8,6 +8,7 @@ import com.coby.cobybase.di.repositoryModule
 import com.coby.cobybase.model.User
 import com.coby.cobybase.utils.PrefUtil
 import com.facebook.stetho.Stetho
+import org.json.JSONObject
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -19,6 +20,8 @@ class MainApplication : Application() {
         lateinit var instance: MainApplication
             private set
     }
+
+    var globalObject: JSONObject? = null
 
     private val prefUtil: PrefUtil by inject()
 
