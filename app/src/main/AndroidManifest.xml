@@ -13,21 +13,33 @@
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        android:requestLegacyExternalStorage="true"
         tools:targetApi="m">
-
-        <activity android:name=".ui.main.MainActivity" />
-
-        <activity android:name=".ui.authentication.AuthActivity">
+        <activity
+            android:name=".ui.MyActivity4"
+            />
+        <activity android:name=".ui.MyActivity3" />
+        <activity android:name=".ui.MyActivity2" android:launchMode="singleTask"/>
+        <activity android:name=".ui.MyActivity1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+
+        <activity android:name=".ui.main.MainActivity" />
+        <activity android:name=".ui.authentication.AuthActivity">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
         </activity>
     </application>
 
