@@ -19,28 +19,37 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity
-            android:name=".ui.MyActivity4"
-            />
-        <activity android:name=".ui.MyActivity3" />
-        <activity android:name=".ui.MyActivity2" android:launchMode="singleTask"/>
-        <activity android:name=".ui.MyActivity1">
+        <activity android:name=".service.MyServiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.MyActivity4" />
+        <activity android:name=".ui.MyActivity3" />
+        <activity
+            android:name=".ui.MyActivity2"
+            android:launchMode="singleTask" />
+        <activity android:name=".ui.MyActivity1">
 
-
+        </activity>
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.authentication.AuthActivity">
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN" />-->
 
-            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
+
+        <service android:name=".service.SimpleService" />
+        <service android:name=".service.BlockingService" />
+        <service android:name=".service.NonBlockingService" />
+        <service android:name=".service.MyIntentService" />
+        <service android:name=".service.MyBindService" />
     </application>
 
 </manifest>
